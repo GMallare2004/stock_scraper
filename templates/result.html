@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+		<title>Historical Stock Prices</title>
+	</head>
+	<body>
+		<main>
+			<h1> {{ticker}} 5-year prices </h1>
+			{% if status %}
+				<p id='status'>{{ status }}</p>
+			{% endif %}
+			{% for table in tables %}
+				{{ table|safe }}
+			{% endfor %}
+			<div style='display: flex; gap: 10px;'>
+				<form method='POST'>
+					<input type='submit' value='Copy'>
+				</form>
+				<form action='/'>
+					<input type='submit' value='New'/>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>
