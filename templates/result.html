@@ -2,17 +2,18 @@
 <html>
 	<head>
 		<meta charset='UTF-8'>
-		<title>Historical Stock Prices</title>
+		<title>Stock Scraper: Results</title>
 	</head>
 	<body>
 		<main>
-			<h1> {{ticker}} 5-year prices </h1>
+			<h1> {{tickers}} 5-year prices </h1>
 			{% if status %}
 				<p id='status'>{{ status }}</p>
 			{% endif %}
 			{% for table in tables %}
 				{{ table|safe }}
 			{% endfor %}
+			<p></p>
 			<div style='display: flex; gap: 10px;'>
 				<form method='POST'>
 					<input type='submit' value='Copy'>
